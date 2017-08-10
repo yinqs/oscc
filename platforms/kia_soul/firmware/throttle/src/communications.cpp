@@ -114,7 +114,7 @@ static void process_throttle_command(
 
         // divisor value found empirically to best match throttle output
         g_throttle_control_state.commanded_accelerator_position =
-            throttle_command_data->commanded_accelerator_position / 24;
+            throttle_command_data->commanded_accelerator_position;
 
         DEBUG_PRINT( "controller commanded accelerator position: " );
         DEBUG_PRINTLN( g_throttle_control_state.commanded_accelerator_position );

@@ -28,49 +28,49 @@
  * @brief Scalar value for the low spoof signal taken from a calibration curve.
  *
  */
-#define SPOOF_LOW_SIGNAL_CALIBRATION_CURVE_SCALE (0.0004)
+#define SPOOF_LOW_SIGNAL_CALIBRATION_CURVE_SCALE (0.00002)
 
 /*
  * @brief Offset value for the low spoof signal taken from a calibration curve.
  *
  */
-#define SPOOF_LOW_SIGNAL_CALIBRATION_CURVE_OFFSET (0.366)
+#define SPOOF_LOW_SIGNAL_CALIBRATION_CURVE_OFFSET (0.40)
 
 /*
  * @brief Scalar value for the high spoof signal taken from a calibration curve.
  *
  */
-#define SPOOF_HIGH_SIGNAL_CALIBRATION_CURVE_SCALE (0.0008)
+#define SPOOF_HIGH_SIGNAL_CALIBRATION_CURVE_SCALE (0.00005)
 
 /*
  * @brief Offset value for the high spoof signal taken from a calibration curve.
  *
  */
-#define SPOOF_HIGH_SIGNAL_CALIBRATION_CURVE_OFFSET (0.732)
+#define SPOOF_HIGH_SIGNAL_CALIBRATION_CURVE_OFFSET (0.80)
 
 /*
  * @brief Minimum allowed value for the low spoof signal value.
  *
  */
-#define SPOOF_LOW_SIGNAL_RANGE_MIN (0)
+#define SPOOF_LOW_SIGNAL_RANGE_MIN (328)
 
 /*
  * @brief Maximum allowed value for the low spoof signal value.
  *
  */
-#define SPOOF_LOW_SIGNAL_RANGE_MAX (1800)
+#define SPOOF_LOW_SIGNAL_RANGE_MAX (1638)
 
 /*
  * @brief Minimum allowed value for the high spoof signal value.
  *
  */
-#define SPOOF_HIGH_SIGNAL_RANGE_MIN (0)
+#define SPOOF_HIGH_SIGNAL_RANGE_MIN (656)
 
 /*
  * @brief Maximum allowed value for the high spoof signal value.
  *
  */
-#define SPOOF_HIGH_SIGNAL_RANGE_MAX (3500)
+#define SPOOF_HIGH_SIGNAL_RANGE_MAX (3358)
 
 /*
  * @brief Value of the accelerator position that indicates operator override.

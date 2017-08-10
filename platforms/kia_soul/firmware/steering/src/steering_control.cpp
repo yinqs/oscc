@@ -228,14 +228,26 @@ static void calculate_torque_spoof(
 {
     if( spoof != NULL )
     {
-        spoof->low =
+        uint16_t spoof_low =
             STEPS_PER_VOLT
             * ((SPOOF_LOW_SIGNAL_CALIBRATION_CURVE_SCALAR * torque_target)
             + SPOOF_LOW_SIGNAL_CALIBRATION_CURVE_OFFSET);
 
-        spoof->high =
+        uint16_t spoof_high =
             STEPS_PER_VOLT
             * ((SPOOF_HIGH_SIGNAL_CALIBRATION_CURVE_SCALAR * torque_target)
             + SPOOF_HIGH_SIGNAL_CALIBRATION_CURVE_OFFSET);
+
+        spoof->low =
+            constrain(
+                spoof_low,
+                STEERING_SPOOF_LOW_SIGNAL_RANGE_MIN,
+                STEERING_SPOOF_LOW_SIGNAL_RANGE_MAX );
+
+        spoof->high =
+            constrain(
+                spoof_high,
+                STEERING_SPOOF_HIGH_SIGNAL_RANGE_MIN,
+                STEERING_SPOOF_HIGH_SIGNAL_RANGE_MAX );
     }
 }

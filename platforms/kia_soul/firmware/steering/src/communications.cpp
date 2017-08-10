@@ -99,7 +99,7 @@ static void process_steering_command(
         {
             // divisor values found empirically to best match steering output
             g_steering_control_state.commanded_steering_wheel_angle =
-                (steering_command_data->commanded_steering_wheel_angle / 9.0);
+                (steering_command_data->commanded_steering_wheel_angle * 0.1);
 
             g_steering_control_state.commanded_steering_wheel_angle_rate =
                 (steering_command_data->commanded_steering_wheel_angle_rate * 9.0);
@@ -132,8 +132,7 @@ static void process_chassis_state_1_report(
         {
             g_steering_control_state.current_steering_wheel_angle =
                 chassis_state_1_data->steering_wheel_angle
-                * RAW_ANGLE_SCALAR
-                * WHEEL_ANGLE_TO_STEERING_WHEEL_ANGLE_SCALAR;
+                * 0.1;
 
             g_chassis_state_1_report_last_rx_timestamp = GET_TIMESTAMP_MS( );
         }

@@ -56,7 +56,7 @@
  * @brief Derivative gain of the PID controller.
  *
  */
-#define PID_DERIVATIVE_GAIN ( 0.03 )
+#define PID_DERIVATIVE_GAIN ( 0.0 )
 
 /*
  * @brief Value of the torque sensor that indicates operator override.
@@ -100,25 +100,53 @@
  * @brief Scalar value for the low spoof signal taken from a calibration curve.
  *
  */
-#define SPOOF_LOW_SIGNAL_CALIBRATION_CURVE_SCALAR ( 0.0008 )
+#define SPOOF_LOW_SIGNAL_CALIBRATION_CURVE_SCALAR ( 0.0011 )
 
 /*
  * @brief Offset value for the low spoof signal taken from a calibration curve.
  *
  */
-#define SPOOF_LOW_SIGNAL_CALIBRATION_CURVE_OFFSET ( 2.26 )
+#define SPOOF_LOW_SIGNAL_CALIBRATION_CURVE_OFFSET ( 2.40 )
 
 /*
  * @brief Scalar value for the high spoof signal taken from a calibration curve.
  *
  */
-#define SPOOF_HIGH_SIGNAL_CALIBRATION_CURVE_SCALAR ( -0.0008 )
+#define SPOOF_HIGH_SIGNAL_CALIBRATION_CURVE_SCALAR ( -0.0011 )
 
 /*
  * @brief Offset value for the high spoof signal taken from a calibration curve.
  *
  */
-#define SPOOF_HIGH_SIGNAL_CALIBRATION_CURVE_OFFSET ( 2.5 )
+#define SPOOF_HIGH_SIGNAL_CALIBRATION_CURVE_OFFSET ( 2.50 )
+
+/*
+ * @brief Minimum allowed value for the low spoof signal value. [steps]
+ *
+ * Equal to \ref STEERING_SPOOF_LOW_SIGNAL_VOLTAGE_MIN * \ref STEPS_PER_VOLT.
+ */
+#define STEERING_SPOOF_LOW_SIGNAL_RANGE_MIN ( 656 )
+
+/*
+ * @brief Minimum allowed value for the low spoof signal value. [steps]
+ *
+ * Equal to \ref STEERING_SPOOF_LOW_SIGNAL_VOLTAGE_MAX * \ref STEPS_PER_VOLT.
+ */
+#define STEERING_SPOOF_LOW_SIGNAL_RANGE_MAX ( 3358 )
+
+/*
+ * @brief Minimum allowed value for the low spoof signal value. [steps]
+ *
+ * Equal to \ref STEERING_SPOOF_HIGH_SIGNAL_VOLTAGE_MIN * \ref STEPS_PER_VOLT.
+ */
+#define STEERING_SPOOF_HIGH_SIGNAL_RANGE_MIN ( 738 )
+
+/*
+ * @brief Minimum allowed value for the low spoof signal value. [steps]
+ *
+ * Equal to \ref STEERING_SPOOF_HIGH_SIGNAL_VOLTAGE_MAX * \ref STEPS_PER_VOLT.
+ */
+#define STEERING_SPOOF_HIGH_SIGNAL_RANGE_MAX ( 3440 )
 
 
 /**
