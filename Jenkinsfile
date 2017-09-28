@@ -28,6 +28,9 @@ node('arduino') {
         sh 'echo $PATH'
         withEnv(['PATH+CARGO=$HOME/.cargo/bin']) {
           sh '''
+            echo $PATH
+            which cargo
+            cargo +1.17.0 --version
             cd api/tests && chmod +x initialize_vcan.sh && ./initialize_vcan.sh
             mkdir build_kia_soul_property_tests
             cd build_kia_soul_property_tests
