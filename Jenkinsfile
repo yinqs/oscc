@@ -25,14 +25,17 @@ node('arduino') {
         sh 'cd firmware && mkdir build_kia_soul_petrol_property_tests && cd build_kia_soul_petrol_property_tests && cmake .. -DKIA_SOUL=ON -DTESTS=ON -DCMAKE_BUILD_TYPE=Release && make run-property-tests'
         echo 'Kia Soul Petrol Firmware Property-Based Tests Complete!'
       }, 'kia soul petrol api property-based tests': {
-        sh '''
-          cd api/tests && chmod +x initialize_vcan.sh && ./initialize_vcan.sh
-          mkdir build_kia_soul_property_tests
-          cd build_kia_soul_property_tests
-          cmake .. -DKIA_SOUL=ON
-          make run-api-property-tests
-          sudo ip link set vcan0 down && sudo rmmod vcan
-        '''
+        sh 'echo $PATH'
+        withEnv('PATH=$HOME/.cargo/bin:$PATH') {
+          sh '''
+            cd api/tests && chmod +x initialize_vcan.sh && ./initialize_vcan.sh
+            mkdir build_kia_soul_property_tests
+            cd build_kia_soul_property_tests
+            cmake .. -DKIA_SOUL=ON
+            make run-api-property-tests
+            sudo ip link set vcan0 down && sudo rmmod vcan
+          '''
+        }
         echo 'Kia Soul Petrol API Property-Based Tests Complete!'
       }
       echo 'Kia Soul Petrol Tests Complete!'
