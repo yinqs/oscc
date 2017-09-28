@@ -26,7 +26,7 @@ node('arduino') {
         echo 'Kia Soul Petrol Firmware Property-Based Tests Complete!'
       }, 'kia soul petrol api property-based tests': {
         sh 'echo $PATH'
-        withEnv('PATH=$HOME/.cargo/bin:$PATH') {
+        withEnv(['PATH=$HOME/.cargo/bin:$PATH']) {
           sh '''
             cd api/tests && chmod +x initialize_vcan.sh && ./initialize_vcan.sh
             mkdir build_kia_soul_property_tests
