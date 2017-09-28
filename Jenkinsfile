@@ -26,7 +26,7 @@ node('arduino') {
         echo 'Kia Soul Petrol Firmware Property-Based Tests Complete!'
       }, 'kia soul petrol api property-based tests': {
         sh 'echo $PATH'
-        withEnv(['PATH+CARGO=$HOME/.cargo/bin']) {
+        withEnv(["PATH+CARGO=$HOME/.cargo/bin"]) {
           sh '''
             echo $PATH
             which cargo
